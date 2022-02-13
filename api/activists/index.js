@@ -1,11 +1,7 @@
-const data = require('../shared/activists-data');
-module.exports = async function (context, req) {
+module.exports = async function (context, req, activistsData) {
     context.log('JavaScript HTTP trigger function processed a request.');
-    try { 
-        const activists = data.getActivists();
-        context.res.status(200).json(activists);
-    } 
-    catch (error) {
-        context.res.status(500).json(error);    
-    }
-}
+    try {
+      context.res.status(200).json(activistsData);
+    } catch (error) {
+      context.res.status(500).json(error);
+  }}
