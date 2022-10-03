@@ -115,6 +115,14 @@
 		};
 	});
 
+	// import 3 different sizes of the image and create a srcset from them
+	import srcsetAvif from '$lib/assets/ammy.jpg?width=700;350;175&format=avif&srcset';
+	// do it a second time, but now as webp since safari can't display avif
+	import srcsetWebp from '$lib/assets/ammy.jpg?width=700;350;175&format=webp&srcset';
+	// create a small placeholder and import its metadata
+	import { src as placeholder, width, height } from '$lib/assets/ammy.jpg?width=350&metadata'
+	const sizes = '(max-width: 350px) 100vw, 700px';
+
 	function getNumberOfDaysUnderDetained(detainedDuration: DetainedDuration[]) {
 		return detainedDuration.reduce((acc, { detainedDate, releasedDate }) => {
 			const detainedDateTemporal = Temporal.PlainDate.from(detainedDate);
@@ -134,7 +142,18 @@
 					<span>{activist.detainedDays} Days Held Under Pre-Trial Detention</span>
 				</div>
 				<div class="individual__image">
-					<img src="./assets/{activist.nickname}.jpg" alt={activist.name} />
+					<!-- <img src="./assets/{activist.nickname}.jpg" alt={activist.name} /> -->
+					<picture>
+						<source sizes={sizes} srcset={srcsetAvif} type="image/avif"/>
+						<source sizes={sizes} srcset={srcsetWebp} type="image/webp"/>
+						<img 
+							src={placeholder}
+							loading="eager"
+							decoding="async"
+							width={width} 
+							height={height}
+							alt={activist.name} />
+					</picture>
 					{#if activist.detainedDuration[activist.detainedDuration.length - 1].releasedDate}
 						<div class="stamp is-bailed">Bailed</div>
 					{/if}
