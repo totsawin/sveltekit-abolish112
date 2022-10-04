@@ -116,11 +116,119 @@
 	});
 
 	// import 3 different sizes of the image and create a srcset from them
-	import srcsetAvif from '$lib/assets/ammy.jpg?width=700;350;175&format=avif&srcset';
+	import srcsetAvif_ammy from '$lib/assets/ammy.jpg?width=700;350;175&format=avif&srcset';
 	// do it a second time, but now as webp since safari can't display avif
-	import srcsetWebp from '$lib/assets/ammy.jpg?width=700;350;175&format=webp&srcset';
+	import srcsetWebp_ammy from '$lib/assets/ammy.jpg?width=700;350;175&format=webp&srcset';
 	// create a small placeholder and import its metadata
-	import { src as placeholder, width, height } from '$lib/assets/ammy.jpg?width=350&metadata'
+	import src_ammy from '$lib/assets/arnon.jpg?width=350&metadata'
+
+	import srcsetAvif_arnon from '$lib/assets/arnon.jpg?width=700;350;175&format=avif&srcset';
+	import srcsetWebp_arnon from '$lib/assets/arnon.jpg?width=700;350;175&format=webp&srcset';
+	import src_arnon from '$lib/assets/arnon.jpg?width=350&metadata'
+
+	import srcsetAvif_bank from '$lib/assets/bank.jpg?width=700;350;175&format=avif&srcset';
+	import srcsetWebp_bank from '$lib/assets/bank.jpg?width=700;350;175&format=webp&srcset';
+	import src_bank from '$lib/assets/bank.jpg?width=350&metadata'
+
+	import srcsetAvif_fah from '$lib/assets/fah.jpg?width=700;350;175&format=avif&srcset';
+	import srcsetWebp_fah from '$lib/assets/fah.jpg?width=700;350;175&format=webp&srcset';
+	import src_fah from '$lib/assets/fah.jpg?width=350&metadata'
+
+	import srcsetAvif_justin from '$lib/assets/justin.jpg?width=700;350;175&format=avif&srcset';
+	import srcsetWebp_justin from '$lib/assets/justin.jpg?width=700;350;175&format=webp&srcset';
+	import src_justin from '$lib/assets/justin.jpg?width=350&metadata'
+
+	import srcsetAvif_mike from '$lib/assets/mike.jpg?width=700;350;175&format=avif&srcset';
+	import srcsetWebp_mike from '$lib/assets/mike.jpg?width=700;350;175&format=webp&srcset';
+	import src_mike from '$lib/assets/mike.jpg?width=350&metadata'
+
+	import srcsetAvif_pai from '$lib/assets/pai.jpg?width=700;350;175&format=avif&srcset';
+	import srcsetWebp_pai from '$lib/assets/pai.jpg?width=700;350;175&format=webp&srcset';
+	import src_pai from '$lib/assets/pai.jpg?width=350&metadata'
+
+	import srcsetAvif_penguin from '$lib/assets/penguin.jpg?width=700;350;175&format=avif&srcset';
+	import srcsetWebp_penguin from '$lib/assets/penguin.jpg?width=700;350;175&format=webp&srcset';
+	import src_penguin from '$lib/assets/penguin.jpg?width=350&metadata'
+
+	import srcsetAvif_port from '$lib/assets/port.jpg?width=700;350;175&format=avif&srcset';
+	import srcsetWebp_port from '$lib/assets/port.jpg?width=700;350;175&format=webp&srcset';
+	import src_port from '$lib/assets/port.jpg?width=350&metadata'
+
+	import srcsetAvif_rung from '$lib/assets/rung.jpg?width=700;350;175&format=avif&srcset';
+	import srcsetWebp_rung from '$lib/assets/rung.jpg?width=700;350;175&format=webp&srcset';
+	import src_rung from '$lib/assets/rung.jpg?width=350&metadata'
+
+	import srcsetAvif_somyot from '$lib/assets/somyot.jpg?width=700;350;175&format=avif&srcset';
+	import srcsetWebp_somyot from '$lib/assets/somyot.jpg?width=700;350;175&format=webp&srcset';
+	import src_somyot from '$lib/assets/somyot.jpg?width=350&metadata'
+
+	import srcsetAvif_toto from '$lib/assets/toto.jpg?width=700;350;175&format=avif&srcset';
+	import srcsetWebp_toto from '$lib/assets/toto.jpg?width=700;350;175&format=webp&srcset';
+	import src_toto from '$lib/assets/toto.jpg?width=350&metadata'
+
+	const images = {
+		ammy: {
+			srcsetAvif: srcsetAvif_ammy,
+			srcsetWebp: srcsetWebp_ammy,
+			src: src_ammy
+		},
+		arnon: {
+			srcsetAvif: srcsetAvif_arnon,
+			srcsetWebp: srcsetWebp_arnon,
+			src: src_arnon
+		},
+		bank: {
+			srcsetAvif: srcsetAvif_bank,
+			srcsetWebp: srcsetWebp_bank,
+			src: src_bank
+		},
+		fah: {
+			srcsetAvif: srcsetAvif_fah,
+			srcsetWebp: srcsetWebp_fah,
+			src: src_fah
+		},
+		justin: {
+			srcsetAvif: srcsetAvif_justin,
+			srcsetWebp: srcsetWebp_justin,
+			src: src_justin
+		},
+		mike: {
+			srcsetAvif: srcsetAvif_mike,
+			srcsetWebp: srcsetWebp_mike,
+			src: src_mike
+		},
+		pai: {
+			srcsetAvif: srcsetAvif_pai,
+			srcsetWebp: srcsetWebp_pai,
+			src: src_pai
+		},
+		penguin: {
+			srcsetAvif: srcsetAvif_penguin,
+			srcsetWebp: srcsetWebp_penguin,
+			src: src_penguin
+		},
+		port: {
+			srcsetAvif: srcsetAvif_port,
+			srcsetWebp: srcsetWebp_port,
+			src: src_port
+		},
+		rung: {
+			srcsetAvif: srcsetAvif_rung,
+			srcsetWebp: srcsetWebp_rung,
+			src: src_rung
+		},
+		somyot: {
+			srcsetAvif: srcsetAvif_somyot,
+			srcsetWebp: srcsetWebp_somyot,
+			src: src_somyot
+		},
+		toto: {
+			srcsetAvif: srcsetAvif_toto,
+			srcsetWebp: srcsetWebp_toto,
+			src: src_toto
+		},
+	};
+
 	const sizes = '(max-width: 350px) 100vw, 700px';
 
 	function getNumberOfDaysUnderDetained(detainedDuration: DetainedDuration[]) {
@@ -144,15 +252,15 @@
 				<div class="individual__image">
 					<!-- <img src="./assets/{activist.nickname}.jpg" alt={activist.name} /> -->
 					<picture>
-						<source sizes={sizes} srcset={srcsetAvif} type="image/avif"/>
-						<source sizes={sizes} srcset={srcsetWebp} type="image/webp"/>
+						<source sizes={sizes} srcset={ images[`${activist.nickname}`].srcsetAvif } type="image/avif"/>
+						<source sizes={sizes} srcset={ images[`${activist.nickname}`].srcsetWebp } type="image/webp"/>
 						<img 
-							src={placeholder}
+							src={images[`${activist.nickname}`].src.placeholder}
 							loading="eager"
 							decoding="async"
-							width={width} 
-							height={height}
-							alt={activist.name} />
+							width={images[`${activist.nickname}`].src.width} 
+							height={images[`${activist.nickname}`].src.height}
+							alt={images[`${activist.nickname}`].src.name} />
 					</picture>
 					{#if activist.detainedDuration[activist.detainedDuration.length - 1].releasedDate}
 						<div class="stamp is-bailed">Bailed</div>
